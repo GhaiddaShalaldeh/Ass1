@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 private Spinner spinner,spinner0,spinner1;
     ImageButton androidImageButton;
     EditText editText;
+    EditText editText1;
+   EditText editText2;
 
 
 
@@ -32,6 +34,10 @@ private Spinner spinner,spinner0,spinner1;
         setContentView(R.layout.activity_main);
         androidImageButton = (ImageButton) findViewById(R.id.image_button_android);
 editText=findViewById(R.id.edittext) ;
+        editText1=findViewById(R.id.edittext) ;
+      editText2=findViewById(R.id.edittext) ;
+
+
 
         androidImageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -89,7 +95,7 @@ editText=findViewById(R.id.edittext) ;
       //  String item2="";
         String item="";
 
-        item =spinner.getSelectedItem().toString();
+         item =spinner.getSelectedItem().toString();
         List<Movies> Movie=objMovies.getMoviescat(item);
 
        // item1 =spinner0.getSelectedItem().toString();
@@ -114,4 +120,49 @@ editText=findViewById(R.id.edittext) ;
     }
 
 
+    public void btnGetMoviesOnClickyear(View view) {
+        MoviesFactory factory= new MoviesFactory();
+        IMoveDa objMovies= factory.getModel();
+
+        String item="";
+
+        item =spinner0.getSelectedItem().toString();
+        List<Movies> Movie=objMovies.getMoviesyear(item);
+
+
+        for (Movies a:Movie){
+            item+=a.getName()+" - "+a.getYear()+" - "+a.getCategory()+"\n";
+
+            editText1.setText(item);
+
+
+
+        }
+
+        // Toast.makeText(this,item,Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void btnGetMoviesOnClickname(View view) {
+        MoviesFactory factory= new MoviesFactory();
+        IMoveDa objMovies= factory.getModel();
+
+        String item="";
+
+        item =spinner1.getSelectedItem().toString();
+        List<Movies> Movie=objMovies.getMoviesname(item);
+
+
+
+        for (Movies a:Movie){
+            item+=a.getName()+" - "+a.getYear()+" - "+a.getCategory()+"\n";
+
+            editText2.setText(item);
+
+
+        }
+
+        // Toast.makeText(this,item,Toast.LENGTH_SHORT).show();
+
+    }
 }

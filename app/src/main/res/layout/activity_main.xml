@@ -109,9 +109,27 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show Movies Information"
+        android:text="Show Movies Information By Category"
         android:id="@+id/btnGetMoviescat"
         android:onClick="btnGetMoviesOnClick"
+        android:layout_marginBottom="10dp"
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Movies Information By year"
+        android:id="@+id/btnGetMoviesyear"
+        android:onClick="btnGetMoviesOnClickyear"
+        android:layout_marginBottom="10dp"
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Movies Information By Name"
+        android:id="@+id/btnGetMoviesname"
+        android:onClick="btnGetMoviesOnClickname"
         android:layout_marginBottom="10dp"
 
         />
@@ -127,6 +145,15 @@
             android:textSize="20sp"
             android:textAlignment="center"
             />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext1"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        />
+
+
 
 
     <ImageButton
